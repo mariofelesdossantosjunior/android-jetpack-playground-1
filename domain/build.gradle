@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+
+apply plugin: 'kotlin'
+
+sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
+targetCompatibility = rootProject.ext.targetCompatibilityVersion
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.ext.jvmTargetVersion
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.ext.jvmTargetVersion
+    }
+}
+
+dependencies {
+    domainDependencies.each { dep -> implementation dep.value }
+    domainTestDependencies.each { dep -> testImplementation dep.value }
+}

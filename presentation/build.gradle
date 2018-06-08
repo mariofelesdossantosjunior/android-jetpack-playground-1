@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'androidx.navigation.safeargs'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    aaptOptions {
+        noCompress "mp4"
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility = rootProject.ext.targetCompatibilityVersion
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationIdBase
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.androidVersionCode
+        versionName rootProject.ext.androidVersionName
+        testInstrumentationRunner rootProject.ext.testInstrumentationRunner
+        testApplicationId rootProject.ext.testApplicationId
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        androidTest {
+            java.srcDirs += "src/sharedTest/java"
+            kotlin.srcDirs += "src/sharedTest/java"
+        }
+        test {
+            java.srcDirs += "src/sharedTest/java"
+            kotlin.srcDirs += "src/sharedTest/java"
+        }
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+
+    presentationDependencies.each { dep -> implementation dep.value }
+    presentationDebugDependencies.each { dep -> debugImplementation dep.value }
+    presentationReleaseDependencies.each { dep -> releaseImplementation dep.value }
+    presentationKaptDependencies.each { dep -> kapt dep.value }
+    presentationTestDependencies.each { dep -> testImplementation dep.value }
+    presentationAndroidTestDependencies.each { dep -> androidTestImplementation dep.value }
+    presentationKaptAndroidTestDependencies.each { dep -> kaptAndroidTest dep.value }
+}

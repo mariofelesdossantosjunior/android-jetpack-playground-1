@@ -1,0 +1,186 @@
+ext {
+    minSdkVersion = 23
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    androidVersionCode = 1
+    androidVersionName = "1.0"
+    sourceCompatibilityVersion = JavaVersion.VERSION_1_7
+    targetCompatibilityVersion = JavaVersion.VERSION_1_7
+    applicationIdBase = "com.jeppeman.jetpackplayground"
+    testApplicationId = "${applicationIdBase}.test"
+    testInstrumentationRunner = "com.jeppeman.jetpackplayground.FakeApplicationTestRunner"
+    jvmTargetVersion = "1.8"
+
+    // Versions
+
+    kotlinVersion = "1.2.70"
+    coreVersion = "1.0.1"
+    appcompatVersion = "1.0.0"
+    recyclerviewVersion = "1.0.0"
+    cardviewVersion = "1.0.0"
+    androidPluginVersion = "3.3.0-beta04"
+    navigationVersion = "1.0.0-alpha08"
+    fragmentVersion = "1.1.0-alpha03"
+    fragmentKtxVersion = "1.1.0-alpha03"
+    moshiVersion = "1.8.0"
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.11.0"
+    glideVersion = "4.8.0"
+    javaxInjectVersion = "1"
+    rxJavaVersion = "2.2.3"
+    rxAndroidVersion = "2.0.1"
+    daggerVersion = "2.19"
+    constraintLayoutVersion = "2.0.0-alpha2"
+    lifecycleVersion = "1.1.0"
+    androidAnnotationsVersion = "1.0.0"
+    timberVersion = "4.7.1"
+
+    // Testing
+
+    mockitoVersion = "2.23.4"
+    robolectricVersion = "4.1"
+    junitVersion = "1.1.0"
+    testCoreVersion = "1.1.0"
+    testRunnerVersion = "1.1.1"
+    testRulesVersion = "1.1.1"
+    testTruthVersion = "1.1.0"
+    espressoVersion = "3.1.1"
+    fragmentTestingVersion = "1.1.0-alpha03"
+    archCoreTestingVersion = "1.1.1"
+
+    presentationDependencies = [
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            appcompat          : "androidx.appcompat:appcompat:$appcompatVersion",
+            recyclerView       : "androidx.recyclerview:recyclerview:$recyclerviewVersion",
+            cardView           : "androidx.cardview:cardview:$cardviewVersion",
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            glide              : "com.github.bumptech.glide:glide:$glideVersion",
+            rxandroid          : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxjava             : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            dagger             : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid      : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerSupport      : "com.google.dagger:dagger-android-support:$daggerVersion",
+            navigationFragment : "android.arch.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUi       : "android.arch.navigation:navigation-ui-ktx:$navigationVersion",
+            navigationRuntime  : "android.arch.navigation:navigation-runtime:$navigationVersion",
+            lifecycleExtensions: "android.arch.lifecycle:extensions:$lifecycleVersion",
+            lifecycleViewmodel : "android.arch.lifecycle:viewmodel:$lifecycleVersion",
+            androidAnnotations : "androidx.annotation:annotation:$androidAnnotationsVersion",
+            coreKtx            : "androidx.core:core-ktx:$coreVersion",
+            moshi              : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            timber             : "com.jakewharton.timber:timber:$timberVersion",
+            fragment           : "androidx.fragment:fragment:$fragmentVersion",
+            fragmentKtx        : "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    ]
+
+    presentationDebugDependencies = [
+            testCore       : "androidx.test:core:$testCoreVersion",
+            fragmentTesting: "androidx.fragment:fragment-testing:$fragmentTestingVersion"
+    ]
+
+    presentationReleaseDependencies = [
+            testCore       : "androidx.test:core:$testCoreVersion",
+            fragmentTesting: "androidx.fragment:fragment-testing:$fragmentTestingVersion"
+    ]
+
+    presentationKaptDependencies = [
+            glideCompiler         : "com.github.bumptech.glide:compiler:$glideVersion",
+            daggerProcessor       : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion"
+    ]
+
+    presentationKaptAndroidTestDependencies = [
+            daggerProcessor       : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion"
+    ]
+
+    presentationTestDependencies = [
+            robolectric           : "org.robolectric:robolectric:$robolectricVersion",
+            mockito               : "org.mockito:mockito-core:$mockitoVersion",
+            junit                 : "androidx.test.ext:junit:$junitVersion",
+            testTruth             : "androidx.test.ext:truth:$testTruthVersion",
+            testRunner            : "androidx.test:runner:$testRunnerVersion",
+            testRules             : "androidx.test:rules:$testRulesVersion",
+            espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
+            navigationTesting     : "android.arch.navigation:navigation-testing:$navigationVersion",
+            archCoreTesting       : "android.arch.core:core-testing:$archCoreTestingVersion"
+    ]
+
+    presentationAndroidTestDependencies = [
+            mockito               : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoAndroid        : "org.mockito:mockito-android:$mockitoVersion",
+            junit                 : "androidx.test.ext:junit:$junitVersion",
+            testTruth             : "androidx.test.ext:truth:$testTruthVersion",
+            testRunner            : "androidx.test:runner:$testRunnerVersion",
+            testRules             : "androidx.test:rules:$testRulesVersion",
+            espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
+            navigationTesting     : "android.arch.navigation:navigation-testing:$navigationVersion"
+    ]
+
+    domainDependencies = [
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            javaxInject: "javax.inject:javax.inject:$javaxInjectVersion",
+            rxjava     : "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    ]
+
+    domainTestDependencies = [
+            mockito  : "org.mockito:mockito-core:$mockitoVersion",
+            junit    : "androidx.test.ext:junit:$junitVersion",
+            testTruth: "androidx.test.ext:truth:$testTruthVersion"
+    ]
+
+    dataDependencies = [
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            moshi                 : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            okhttp                : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okhttpUrlConnection   : "com.squareup.okhttp3:okhttp-urlconnection:$okHttpVersion",
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitMoshiConverter: "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            retrofitRxJavaAdapter : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            rxandroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxjava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            dagger                : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid         : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerSupport         : "com.google.dagger:dagger-android-support:$daggerVersion",
+    ]
+
+    dataKaptDependencies = [
+            daggerProcessor       : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion"
+    ]
+
+    dataTestDependencies = [
+            mockito  : "org.mockito:mockito-core:$mockitoVersion",
+            junit    : "androidx.test.ext:junit:$junitVersion",
+            testTruth: "androidx.test.ext:truth:$testTruthVersion"
+    ]
+}
+
+subprojects { ->
+    repositories {
+        jcenter()
+        google()
+    }
+
+    buildscript {
+        repositories {
+            jcenter()
+            google()
+            mavenCentral()
+        }
+        dependencies {
+            classpath "com.android.tools.build:gradle:$androidPluginVersion"
+            classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
